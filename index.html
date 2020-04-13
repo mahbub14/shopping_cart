@@ -81,133 +81,102 @@
 <script>
 
 
-   //First product plus button action listener
-      const plusBtn = document.getElementById("first-plus-btn");
-      plusBtn.addEventListener("click", function(){
+   //Product-1 plus listener
+           const plusBtn = document.getElementById("first-plus-btn");
+           plusBtn.addEventListener("click", function(){
            const product = inputCounter("first-input");
-
            const eachPrice = 1219; 
            const TotalId = "first-total";          
-            //Increase one by one
-            IncreaseItem("first-input",product,1,eachPrice,TotalId);
+           IncreaseItem("first-input",product,1,eachPrice,TotalId);
 
       })
 
-      //First product minus button action listener
-      const minusBtn = document.getElementById("first-minus-btn");
-      minusBtn.addEventListener("click",function(){
+      //Product-1 minus listener
+         const minusBtn = document.getElementById("first-minus-btn");
+         minusBtn.addEventListener("click",function(){
          const product2 = inputCounter("first-input");
          const eachPrice = 1219;
          const TotalId = "first-total"; 
-         //Decrease one by one
          if(product2!=0){            
-            IncreaseItem("first-input",product2,-1, eachPrice,TotalId);
+         IncreaseItem("first-input",product2,-1, eachPrice,TotalId);
          }
 
       })
 
 
-      //Second product plus button action listener
-      const secondPlusBtn = document.getElementById("second-plus-btn");
-      secondPlusBtn.addEventListener("click",function(){
+      //Product-2 plus listener
+         const secondPlusBtn = document.getElementById("second-plus-btn");
+         secondPlusBtn.addEventListener("click",function(){
          const product = inputCounter("second-input");
-
          const eachPrice = 59; 
          const TotalId = "second-total";          
-         //Increase one by one
          IncreaseItem("second-input",product,1,eachPrice,TotalId);
 
       })
 
 
-      //Second product minus button action listener
-      const secondMinusBtn = document.getElementById("second-minus-btn");
-      secondMinusBtn.addEventListener("click",function(){
+      //Product-2 minus listener
+         const secondMinusBtn = document.getElementById("second-minus-btn");
+         secondMinusBtn.addEventListener("click",function(){
          const product2 = inputCounter("second-input");
          const eachPrice = 59;
          const TotalId = "second-total"; 
-         //Decrease one by one
          if(product2!=0){            
-            IncreaseItem("second-input",product2,-1, eachPrice,TotalId);
+         IncreaseItem("second-input",product2,-1, eachPrice,TotalId);
          }
       })
 
-      function inputCounter(productId){
+         function inputCounter(productId){
          const ItemNo = document.getElementById(productId).value;
          const ItemNoAll = parseFloat(ItemNo);
          return ItemNoAll;
       }
 
-      //Increase one by one funtion
-      function IncreaseItem(ItemId,ProductCount, ValuePlus,Price,TotalId){
+         //Function for increament
+           function IncreaseItem(ItemId,ProductCount, ValuePlus,Price,TotalId){
            const Item = document.getElementById(ItemId).value = ProductCount + (1*ValuePlus);
-
            document.getElementById(TotalId).innerText = Price * Item;
 
-         //Get price by first product
+         //Pricing
            const fTotal = document.getElementById("first-total").innerText;
            const firstTotal = parseFloat(fTotal);
-         
-         //Get price by second product
            const sTotal = document.getElementById("second-total").innerText;
            const secondTotal = parseFloat(sTotal);
-
-           //Set price in subTotal
            const Total = document.getElementById("sub-total-price").innerText = firstTotal + secondTotal;
-
-           //Set price in Total
-
            document.getElementById("total-price").innerText = Total;
       }
 
-      //First Input Kewpress action listener
-      const keyPress = document.getElementById("first-input");
-      keyPress.addEventListener("keyup",function(){
+         //Input-1 listener
+         const keyPress = document.getElementById("first-input");
+         keyPress.addEventListener("keyup",function(){
          const ItemNo = document.getElementById("first-input").value;
          const Item = parseFloat(ItemNo);
          document.getElementById("first-total").innerText = 1219 * Item;
 
-         //Get price by first product
+         //Pricing
          const fTotal = document.getElementById("first-total").innerText;
-           const firstTotal = parseFloat(fTotal);
-         
-         //Get price by second product
-           const sTotal = document.getElementById("second-total").innerText;
-           const secondTotal = parseFloat(sTotal);
-
-
-         //Set price in subTotal
+         const firstTotal = parseFloat(fTotal);
+         const sTotal = document.getElementById("second-total").innerText;
+         const secondTotal = parseFloat(sTotal);
          const Total = document.getElementById("sub-total-price").innerText = firstTotal + secondTotal;
-
-         //Set price in Total
          document.getElementById("total-price").innerText = Total;
       })
 
-      //Second Input Kewpress action listener
-      const secondKeyPress = document.getElementById("second-input");
-      secondKeyPress.addEventListener("keyup",function(){
+         //Input-2 listener
+         const secondKeyPress = document.getElementById("second-input");
+         secondKeyPress.addEventListener("keyup",function(){
          const ItemNo = document.getElementById("second-input").value;
          const Item = parseFloat(ItemNo);
          document.getElementById("second-total").innerText = 59 * Item;
 
-         //Get price by first product
+         //Pricing
          const fTotal = document.getElementById("first-total").innerText;
-           const firstTotal = parseFloat(fTotal);
-         
-         //Get price by second product
-           const sTotal = document.getElementById("second-total").innerText;
-           const secondTotal = parseFloat(sTotal);
-
-
-         //Set price in subTotal
+         const firstTotal = parseFloat(fTotal);
+         const sTotal = document.getElementById("second-total").innerText;
+         const secondTotal = parseFloat(sTotal);
          const Total = document.getElementById("sub-total-price").innerText = firstTotal + secondTotal;
-
-         //Set price in Total
          document.getElementById("total-price").innerText = Total;
       })
-
-      //All done
-
 
 </script>
    
